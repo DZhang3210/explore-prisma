@@ -8,7 +8,11 @@ type Params = {
     }
 }
 
-export default async function page({ params }) {
+export default async function page({ params }: {
+    params: {
+        slug: string,
+    }
+}) {
     const post = await prisma.post.findUnique(
         {
             where: {
