@@ -5,6 +5,7 @@ import { revalidatePath } from "next/cache"
 
 export async function createPost(formData: FormData) {
     try {
+        console.log(formData)
         await prisma.post.create({
             data: {
                 title: formData.get("title") as string,
@@ -14,14 +15,15 @@ export async function createPost(formData: FormData) {
                 content: formData.get('content') as string,
                 author: {
                     connect: {
-                        email: 'davidzhang3210@gmail.com'
+                        email: "davidzhang3210@gmail.com"
                     }
                 }
             }
         })
+        console.log("here")
         revalidatePath('/')
     }
     catch (error) {
-
+        console.log("failing cause", error)
     }
 }
