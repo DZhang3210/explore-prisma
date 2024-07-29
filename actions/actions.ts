@@ -14,8 +14,9 @@ export async function createPost(formData: FormData) {
                     .toLowerCase(),
                 content: formData.get('content') as string,
                 author: {
-                    connect: {
-                        email: "davidzhang3210@gmail.com"
+                    create: {
+                        email: "davidzhang3210@gmail.com",
+                        hashedPassword: 'iujhwernfolkfnsosmlnokfdsmokifds'
                     }
                 }
             }
