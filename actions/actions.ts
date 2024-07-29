@@ -15,7 +15,7 @@ export async function createPost(formData: FormData) {
                 content: formData.get('content') as string,
                 author: {
                     create: {
-                        email: "davidzhang3210@gmail.com",
+                        email: "davidzhang32101@gmail.com",
                         hashedPassword: 'iujhwernfolkfnsosmlnokfdsmokifds'
                     }
                 }
